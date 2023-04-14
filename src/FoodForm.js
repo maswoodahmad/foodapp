@@ -1,6 +1,6 @@
 import { useState,useEffect,useRef  } from "react";
 import { useNavigate } from "react-router-dom";
-
+import './App.css'
 export default function FoodForm() {
   
  const[food,setFood] = useState( {foodType:"",foodName:"",delivery:""} );
@@ -25,10 +25,11 @@ export default function FoodForm() {
 }, [formSubmitted]);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form-container" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="food-type">Food Type:</label>
         <select
+
           id="food-type"
           value={food.foodType}
           onChange={(e) => setFood(  {...food,foodType:e.target.value})}
@@ -46,6 +47,7 @@ export default function FoodForm() {
       <div>
         <label htmlFor="food-name">Food Name:</label>
         <input
+        className="form-input"
           type="text"
           id="food-name"
           value={food.foodName}
@@ -57,6 +59,7 @@ export default function FoodForm() {
       <div>
         <label htmlFor="max-delivery-time">Max Delivery Time (minutes):</label>
         <input
+        className="form-input"
           type="number"
           id="max-delivery-time"
           value={food.delivery}
@@ -65,7 +68,7 @@ export default function FoodForm() {
         />
       </div>
 
-      <button type="submit">Add Food</button>
+      <button className="form-button" type="submit">Add Food</button>
     </form>
   );
 }
