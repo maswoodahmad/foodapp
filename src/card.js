@@ -2,16 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 
 const Card = (prop) => {
-//   const [products, setProducts] = useState([]);
-
-//   useEffect(() => {
-//     const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
-//     setProducts(storedProducts);
-//   }, []);
 
   
 
-  return (
+return (
     <div>
       
       <div className="card-container">

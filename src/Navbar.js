@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './navbar.css'
 
 const NavigationBar = () => {
   return (
-    <nav>
-      <h1>Food</h1>
-      <ul>
+    <nav className='nav'>
+      <h1 className='ttile'>Food</h1>
+      <ul className='nav-links'>
         <li>
           <Link to="/add-food">Add Food</Link>
         </li>

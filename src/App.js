@@ -1,24 +1,28 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './Home';
-import NavigationBar from './Navbar';
-import FoodForm from './FoodList';
-import FoodList from './FoodForm';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route,Routes, BrowserRouter } from 'react-router-dom';
 
-const App = () => {
+
+import NavigationBar from './Navbar';
+import FoodForm from './FoodForm';
+ import FoodList from './FoodList';
+
+ const App = () => {
+
+
+
+
   return (
-    <Router>
-      <div>
-        <NavigationBar />
-       
-      <Router>
-      <Route path="/" exact component={Home} />
-      <Route path="/add-food" component={FoodForm} />
-      <Route path="/browse-food" component={FoodList} />
-      
-     </Router>
-      </div>
-    </Router>
+    <BrowserRouter>
+     <NavigationBar /> 
+    <Routes>
+      <Route path="/" element={<FoodList />} />
+        <Route path="/add-food" element={<FoodForm  />} />
+         <Route path="/browse-food" element={<FoodList  />} /> 
+    </Routes>
+    
+    </BrowserRouter>
+
+    
   );
 };
 
